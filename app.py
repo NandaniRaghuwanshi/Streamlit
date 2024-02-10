@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, silhouette_score
 
-train_data = pd.read_excel(r"D://ResoluteAi_Assignment//train.xlsx")
+train_data = pd.read_excel(r"data//train.xlsx")
 
 st.title("ML with Python task")
 nav = st.sidebar.radio('Menu',['Task_1','Task_2','Task_3'])
@@ -17,7 +17,7 @@ nav = st.sidebar.radio('Menu',['Task_1','Task_2','Task_3'])
 if nav == 'Task_1':
     st.header('Task 1: Machine Learning - Clustering')
     if st.checkbox('Show target values'):
-        target_values1 = pd.read_excel("D://ResoluteAi_Assignment//train.xlsx", nrows = 50)
+        target_values1 = pd.read_excel("data//train.xlsx", nrows = 50)
         st.table(target_values1)
     
     shapeTask1 = train_data.shape
@@ -76,7 +76,7 @@ if nav == 'Task_1':
 if nav == 'Task_2':
     st.header('Task 2: Machine Learning - Classification')
     if st.checkbox('Show target values'):
-        target_values2 = pd.read_excel("D://ResoluteAi_Assignment//train.xlsx", nrows = 50)
+        target_values2 = pd.read_excel("data//train.xlsx", nrows = 50)
         st.table(target_values2)
     
     shapeTask2 = train_data.shape
@@ -135,14 +135,14 @@ if nav == 'Task_2':
 if nav == 'Task_3':
     st.header('Task 3: Python')
     input_data = 'inputsheet'
-    task3_data = pd.read_excel("D://ResoluteAi_Assignment//rawdata.xlsx",sheet_name = input_data  )
+    task3_data = pd.read_excel("data//rawdata.xlsx",sheet_name = input_data  )
     if st.checkbox('Show raw data'):
         st.table(task3_data)
     shapeTask3 = task3_data.shape
     st.write(f"☆ Shape of Raw dataset: {shapeTask3}")  
     
     output_sheet = 'new_output'
-    output_data = pd.read_excel("D://ResoluteAi_Assignment//rawdata.xlsx" , sheet_name = output_sheet)
+    output_data = pd.read_excel("data//rawdata.xlsx" , sheet_name = output_sheet)
     st.write(f"☆ Output :")
     st.write(output_data)
     
